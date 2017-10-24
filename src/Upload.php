@@ -18,12 +18,15 @@ class Upload
 	    	$imgFile->rotate($photo_degree);
         }
 
+        //encode image into jpg
+	    $imgFile->encode('jpg', 90);
+
 	    $image_generated_filename = $name_prefix;
 	    $image_generated_filename = preg_replace('/[^a-zA-Z0-9_.]/', '', $image_generated_filename);
 
 	    // convert the string to all lowercase
 	    $image_generated_filename = strtolower($image_generated_filename);
-	    $imagename = time()."_".$image_generated_filename.'.png';
+	    $imagename = time()."_".$image_generated_filename.'.jpg';
 
 	    \Cloudinary::config(array(
 	        'cloud_name' => config('cloud_inary.cloud_name'),
@@ -33,6 +36,9 @@ class Upload
 
 	    //temporary path for saving file
 	    $destinationPath = storage_path('app/public/');
+
+
+
 	    $imgFile->save($destinationPath.$imagename);
 	    $cloud = \Cloudinary\Uploader::upload($destinationPath.$imagename, array("use_filename" => TRUE , "folder" => $folder_name , "unique_filename" => FALSE));
 
