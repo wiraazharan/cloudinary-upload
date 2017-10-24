@@ -1,4 +1,4 @@
-# CLOUDINARY-UPLOAD FOR LARAVEL 5.5 AND ABOVE
+# CLOUDINARY-UPLOAD
 
 ### Setup
 RUN : 
@@ -39,14 +39,14 @@ return [
     ],
 ```
 
-### Usage
+### Implementation for Laravel
 
 In Controller : 
 
 ```sh
 public function test_upload(Request $request){
         $uploaded_picture = $request->file('photo');
-        $imageUrl = CustomCloudinaryUpload::upload($uploaded_picture,180,'looks','look');
+        $imageUrl = CustomCloudinaryUpload::upload($uploaded_picture,{photo_degree},'{folder_to_be_saved}','{image_name_prefix}');
         return $imageUrl;
     }
 ```
