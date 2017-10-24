@@ -19,3 +19,22 @@ return [
     'base_secure_url' => 'https://res.cloudinary.com/',
 ];
 ```
+
+
+### Register Provider AND Facade
+
+```sh
+'providers' => [
+        ...
+        Intervention\Image\ImageServiceProvider::class,
+        Wiraazharan\Cloudinaryupload\UploadServiceProvider::class,
+    ],
+```
+
+```sh
+'aliases' => [
+        ...
+        'Image' => Intervention\Image\Facades\Image::class,
+        'CustomCloudinaryUpload' => Wiraazharan\Cloudinaryupload\UploadFacade::class,
+    ],
+```
