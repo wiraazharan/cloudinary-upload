@@ -14,9 +14,12 @@
         }
     ],
     "autoload" : {
-      "psr-4": {
-        "Wiraazharan\\Cloudinaryupload\\": "vendor/wiraazharan/cloudinary-upload/src"
-      }
+      "classmap": [
+            "src"
+        ],
+        "psr-4": {
+            "Wiraazharan\\Cloudinaryupload\\": "src/"
+        }
     },
     "minimum-stability": "dev",
     "extra": {
