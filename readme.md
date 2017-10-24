@@ -1,4 +1,4 @@
-# CLOUDINARY-UPLOAD
+# CLOUDINARY-UPLOAD FOR LARAVEL 5.5 AND ABOVE
 
 ### Setup
 RUN : 
@@ -37,4 +37,16 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'CustomCloudinaryUpload' => Wiraazharan\Cloudinaryupload\UploadFacade::class,
     ],
+```
+
+### Usage
+
+In Controller : 
+
+```sh
+public function test_upload(Request $request){
+        $uploaded_picture = $request->file('photo');
+        $imageUrl = CustomCloudinaryUpload::upload($uploaded_picture,180,'looks','look');
+        return $imageUrl;
+    }
 ```
