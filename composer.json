@@ -13,5 +13,15 @@
             "email": "wiraazharan@gmail.com"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Wiraazharan\\Cloudinary-upload\\UploadServiceProvider"
+            ],
+            "aliases": {
+                "CloudinaryUpload": "Wiraazharan\\Cloudinary-upload\\UploadFacade"
+            }
+        }
+    }
 }
