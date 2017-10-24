@@ -22,10 +22,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Wiraazharan\\Cloudinary-upload\\UploadServiceProvider"
+                "Wiraazharan\\Cloudinaryupload\\UploadServiceProvider"
             ],
             "aliases": {
-                "CloudinaryUpload": "Wiraazharan\\Cloudinary-upload\\UploadFacade"
+                "CloudinaryUpload": "Wiraazharan\\Cloudinaryupload\\UploadFacade"
             }
         }
     }
